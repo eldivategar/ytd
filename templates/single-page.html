@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="top-text header-text">
+                <h6>GEN-RP</h6>
+                <h2>Convert Youtube to MP4 &amp; MP3</h2>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <br>
+            <center>
+                <h3 class="col-lg-8" style="color: rgb(0, 204, 255);">{{ titles }}</h3>
+            </center>
+            <br>
+            <center><img src="{{thumbnails}}" alt="{{titles}}" style="width: 50%; border-radius: 20px;"></center>
+
+            <ul class="categories">
+                {% if titles %}
+                <center>
+                    <p style="color: white;">DOWNLOAD DIBAWAH</p>
+                </center>
+                <br>
+                <li><a href="{{url_for('get_mp4', link=mp4 )}}"><span class="icon"><img
+                                src="static/assets/images/mp4.png" alt="mp4"></span>MP4</a></li>
+                <li><a href="{{url_for('get_mp3', link=mp3)}}"><span class="icon"><img
+                                src="static/assets/images/mp3.png" alt="mp3"></span>MP3</a></li>
+                {% endif %}
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
